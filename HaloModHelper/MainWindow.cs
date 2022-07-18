@@ -242,7 +242,7 @@ namespace HaloModHelper
 
             if (mapFile.Equals(""))
             {
-                MessageBox.Show("Select what level ou are overwriting", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Select what level you are overwriting", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             if(backupBox.Checked == true)
