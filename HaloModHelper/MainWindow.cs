@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 
@@ -274,6 +268,11 @@ namespace HaloModHelper
                 "If you want to install a mod, make sure you selected your halo3 folder from the beginning and then select the mod file under \"Mod file to be installed:\"\n" +
                 "then choose what level this mod is replacing and select whether you want to make a backup of the original level first.\n" +
                 "Then click \"Install Mod\".", "Help", MessageBoxButtons.OK, MessageBoxIcon.Question);
+        }
+
+        private void haloFolderBox_TextChanged(object sender, EventArgs e)
+        {
+            File.WriteAllText("config.txt", haloFolderBox.Text);
         }
     }
 }

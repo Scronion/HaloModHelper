@@ -147,6 +147,7 @@ namespace HaloModHelper
             this.haloFolderBox.Name = "haloFolderBox";
             this.haloFolderBox.Size = new System.Drawing.Size(558, 20);
             this.haloFolderBox.TabIndex = 6;
+            this.haloFolderBox.TextChanged += new System.EventHandler(this.haloFolderBox_TextChanged);
             // 
             // findHalo3
             // 
@@ -201,7 +202,6 @@ namespace HaloModHelper
             // halo3Folder
             // 
             this.halo3Folder.Description = "Select your halo3 folder in your Halo: MCC folder";
-            this.halo3Folder.RootFolder = System.Environment.SpecialFolder.ProgramFilesX86;
             this.halo3Folder.ShowNewFolderButton = false;
             // 
             // backupBox
@@ -234,7 +234,7 @@ namespace HaloModHelper
             this.helpBtn.UseVisualStyleBackColor = true;
             this.helpBtn.Click += new System.EventHandler(this.helpBtn_Click);
             // 
-            // Form1
+            // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -258,7 +258,7 @@ namespace HaloModHelper
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(816, 254);
             this.MinimumSize = new System.Drawing.Size(816, 254);
-            this.Name = "Form1";
+            this.Name = "MainWindow";
             this.Text = "Halo Mod Helper";
             this.ResumeLayout(false);
             this.PerformLayout();
