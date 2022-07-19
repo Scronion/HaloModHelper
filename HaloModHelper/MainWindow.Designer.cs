@@ -112,7 +112,6 @@ namespace HaloModHelper
             this.multiMaps.Name = "multiMaps";
             this.multiMaps.Size = new System.Drawing.Size(121, 21);
             this.multiMaps.TabIndex = 2;
-            this.multiMaps.SelectedIndexChanged += new System.EventHandler(this.multiMaps_SelectedIndexChanged);
             // 
             // singlePlayerMaps
             // 
@@ -132,7 +131,6 @@ namespace HaloModHelper
             this.singlePlayerMaps.Size = new System.Drawing.Size(121, 21);
             this.singlePlayerMaps.TabIndex = 4;
             this.singlePlayerMaps.Visible = false;
-            this.singlePlayerMaps.SelectedIndexChanged += new System.EventHandler(this.singlePlayerMaps_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -142,7 +140,6 @@ namespace HaloModHelper
             this.label3.Size = new System.Drawing.Size(131, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Location of \"halo3\" folder:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // haloFolderBox
             // 
@@ -176,7 +173,6 @@ namespace HaloModHelper
             this.label4.Size = new System.Drawing.Size(115, 13);
             this.label4.TabIndex = 8;
             this.label4.Text = "Mod file to be installed:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // findMod
             // 
@@ -207,7 +203,6 @@ namespace HaloModHelper
             this.halo3Folder.Description = "Select your halo3 folder in your Halo: MCC folder";
             this.halo3Folder.RootFolder = System.Environment.SpecialFolder.ProgramFilesX86;
             this.halo3Folder.ShowNewFolderButton = false;
-            this.halo3Folder.HelpRequest += new System.EventHandler(this.halo3Folder_HelpRequest);
             // 
             // backupBox
             // 
@@ -265,7 +260,6 @@ namespace HaloModHelper
             this.MinimumSize = new System.Drawing.Size(816, 254);
             this.Name = "Form1";
             this.Text = "Halo Mod Helper";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

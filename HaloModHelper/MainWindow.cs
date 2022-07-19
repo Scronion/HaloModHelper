@@ -21,6 +21,10 @@ namespace HaloModHelper
         public MainWindow()
         {
             InitializeComponent();
+            if (File.Exists("config.txt"))
+            {
+                haloFolderBox.Text = File.ReadAllText("config.txt");
+            }
         }
 
         private void singleMultiSelect_SelectedIndexChanged(object sender, EventArgs e)
@@ -37,46 +41,17 @@ namespace HaloModHelper
             }
         }
 
-        private void multiMaps_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void singlePlayerMaps_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void findHalo3_Click(object sender, EventArgs e)
         {
             halo3Folder.ShowDialog();
             haloFolderBox.Text = halo3Folder.SelectedPath;
+            File.WriteAllText("config.txt", haloFolderBox.Text);
         }
 
         private void findMod_Click(object sender, EventArgs e)
         {
             modFolder.ShowDialog();
             modBox.Text = modFolder.FileName;
-        }
-
-        private void halo3Folder_HelpRequest(object sender, EventArgs e)
-        {
-
         }
 
         private void installMod_Click(object sender, EventArgs e)
