@@ -15,9 +15,9 @@ namespace HaloModHelper
         public MainWindow()
         {
             InitializeComponent();
-            if (File.Exists("config.txt"))
+            if (File.Exists("hmhConfig.txt"))
             {
-                haloFolderBox.Text = File.ReadAllText("config.txt");
+                haloFolderBox.Text = File.ReadAllText("hmhConfig.txt");
             }
         }
 
@@ -39,7 +39,7 @@ namespace HaloModHelper
         {
             halo3Folder.ShowDialog();
             haloFolderBox.Text = halo3Folder.SelectedPath;
-            File.WriteAllText("config.txt", haloFolderBox.Text);
+            File.WriteAllText("hmhConfig.txt", haloFolderBox.Text);
         }
 
         private void findMod_Click(object sender, EventArgs e)
@@ -272,7 +272,7 @@ namespace HaloModHelper
 
         private void haloFolderBox_TextChanged(object sender, EventArgs e)
         {
-            File.WriteAllText("config.txt", haloFolderBox.Text);
+            File.WriteAllText("hmhConfig.txt", haloFolderBox.Text);
         }
     }
 }
