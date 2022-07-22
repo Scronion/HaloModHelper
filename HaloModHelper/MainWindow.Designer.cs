@@ -47,6 +47,10 @@ namespace HaloModHelper
             this.backupBox = new System.Windows.Forms.CheckBox();
             this.restoreBtn = new System.Windows.Forms.Button();
             this.helpBtn = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.versionNum = new System.Windows.Forms.ToolStripStatusLabel();
+            this.updateFail = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // singleMultiSelect
@@ -226,7 +230,7 @@ namespace HaloModHelper
             // 
             // helpBtn
             // 
-            this.helpBtn.Location = new System.Drawing.Point(524, 177);
+            this.helpBtn.Location = new System.Drawing.Point(524, 154);
             this.helpBtn.Name = "helpBtn";
             this.helpBtn.Size = new System.Drawing.Size(264, 23);
             this.helpBtn.TabIndex = 14;
@@ -234,11 +238,33 @@ namespace HaloModHelper
             this.helpBtn.UseVisualStyleBackColor = true;
             this.helpBtn.Click += new System.EventHandler(this.helpBtn_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.versionNum,
+            this.updateFail});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 193);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip1.TabIndex = 15;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // versionNum
+            // 
+            this.versionNum.Name = "versionNum";
+            this.versionNum.Size = new System.Drawing.Size(0, 17);
+            // 
+            // updateFail
+            // 
+            this.updateFail.Name = "updateFail";
+            this.updateFail.Size = new System.Drawing.Size(0, 17);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 215);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.helpBtn);
             this.Controls.Add(this.restoreBtn);
             this.Controls.Add(this.backupBox);
@@ -260,6 +286,8 @@ namespace HaloModHelper
             this.MinimumSize = new System.Drawing.Size(816, 254);
             this.Name = "MainWindow";
             this.Text = "Halo Mod Helper";
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,6 +312,9 @@ namespace HaloModHelper
         private System.Windows.Forms.CheckBox backupBox;
         private System.Windows.Forms.Button restoreBtn;
         private System.Windows.Forms.Button helpBtn;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel versionNum;
+        private System.Windows.Forms.ToolStripStatusLabel updateFail;
     }
 }
 

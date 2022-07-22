@@ -2,6 +2,7 @@
 using System.Linq;
 using System.IO;
 using System.Windows.Forms;
+using System.Net;
 
 namespace HaloModHelper
 {
@@ -14,11 +15,59 @@ namespace HaloModHelper
 
         public MainWindow()
         {
+            double verNum = 1.3;
+            string result = null;
+            string url = "https://github.com/Scronion/HaloModHelper/releases/latest";
+            WebResponse response = null;
+            StreamReader reader = null;
+            double newVerNum = 0;
+
             InitializeComponent();
+
+            versionNum.Text = $"Version {verNum.ToString()}";
+
             if (File.Exists("hmhConfig.txt"))
             {
                 haloFolderBox.Text = File.ReadAllText("hmhConfig.txt");
             }
+
+            try
+            {
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.Method = "GET";
+                response = request.GetResponse();
+                reader = new StreamReader(response.GetResponseStream(), encoding:System.Text.Encoding.UTF8);
+
+                result = reader.ReadToEnd();
+                result = result.Substring(result.IndexOf("<title>Release Ver."), 23);
+                result = result.Substring(20);
+
+                newVerNum = double.Parse(result);
+            }
+            catch (Exception ohCrap)
+            {
+                updateFail.Text = "|  Failed to check for updates";
+            }
+            finally
+            {
+                if(reader != null)
+                {
+                    reader.Close();
+                }
+                if(response != null)
+                {
+                    response.Close();
+                }
+            }
+
+            if(newVerNum > verNum)
+            {
+                var updateResult = MessageBox.Show("There is a new version available, would you like to download?", "Update available", MessageBoxButtons.YesNo);
+                if(updateResult == DialogResult.Yes)
+                {
+                    System.Diagnostics.Process.Start("https://github.com/Scronion/HaloModHelper/releases/latest/download/halomodhelper.exe");
+                }
+            }            
         }
 
         private void singleMultiSelect_SelectedIndexChanged(object sender, EventArgs e)
@@ -212,6 +261,7 @@ namespace HaloModHelper
             if (mapFile.Equals(""))
             {
                 MessageBox.Show("Select what level you are overwriting", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             if(backupBox.Checked == true)
