@@ -15,7 +15,7 @@ namespace HaloModHelper
 
         public MainWindow()
         {
-            double verNum = 1.3;
+            double verNum = 1.4;
             string result = null;
             string url = "https://github.com/Scronion/HaloModHelper/releases/latest";
             WebResponse response = null;

@@ -211,6 +211,8 @@ namespace HaloModHelper
             // backupBox
             // 
             this.backupBox.AutoSize = true;
+            this.backupBox.Checked = true;
+            this.backupBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.backupBox.Location = new System.Drawing.Point(149, 119);
             this.backupBox.Name = "backupBox";
             this.backupBox.Size = new System.Drawing.Size(138, 17);
