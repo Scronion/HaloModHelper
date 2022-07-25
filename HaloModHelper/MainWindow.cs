@@ -15,7 +15,7 @@ namespace HaloModHelper
 
         public MainWindow()
         {
-            double verNum = 1.4;
+            double verNum = 1.5;
             string result = null;
             string url = "https://github.com/Scronion/HaloModHelper/releases/latest";
             WebResponse response = null;
@@ -66,6 +66,7 @@ namespace HaloModHelper
                 if(updateResult == DialogResult.Yes)
                 {
                     System.Diagnostics.Process.Start("https://github.com/Scronion/HaloModHelper/releases/latest/download/halomodhelper.exe");
+                    Environment.Exit(1);
                 }
             }            
         }
